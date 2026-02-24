@@ -13,19 +13,7 @@
         telecomunicaciones que están en demanda en estos sectores.</p>
     </section>
 
-    <!-- Sección 2: Servicios -->
-    <section class="services">
-      <h2>Servicios</h2>
-
-      <div class="grid">
-        <div class="card" v-for="service in services" :key="service.id">
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección 3: Productos -->
+    <!-- Sección 2: Productos -->
     <section class="products">
       <h2>Productos</h2>
 
@@ -37,7 +25,7 @@
       </div>
     </section>
 
-    <!-- Sección 4: Partners -->
+    <!-- Sección 3: Partners -->
     <section class="partners">
       <h2>Partners</h2>
 
@@ -50,9 +38,9 @@
       </div>
     </section>
 
-    <!-- Sección 5: CTA -->
+    <!-- Sección 4: CTA -->
     <section class="cta">
-      <h2>¿Listo para trabajar con nosotros?</h2>
+      <h2>«Soluciones Tecnológicas a Entera Satisfacción»</h2>
       <p>Contáctanos y lleva tu empresa al siguiente nivel</p>
     </section>
 
@@ -62,11 +50,6 @@
 <script setup>
 import Carousel from '@/components/Carousel.vue'
 
-const services = [
-  { id: 1, title: 'Soporte TI', description: 'Soporte técnico empresarial 24/7' },
-  { id: 2, title: 'Redes', description: 'Infraestructura y seguridad de redes' },
-  { id: 3, title: 'Desarrollo', description: 'Sistemas a la medida' }
-]
 
 const products = [
   { id: 1, name: 'Servidor Empresarial', image: '/img/product1.jpg' },

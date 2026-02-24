@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('app');
-});
+// Ruta para Vue SPA - DEBE SER LA ÚLTIMA RUTA
+Route::get('/{any}', function () {
+    return view('app'); // Tu vista principal de Vue
+})->where('any', '.*');
