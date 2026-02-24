@@ -38,18 +38,13 @@
       </div>
     </section>
 
-    <!-- Sección 4: CTA -->
-    <section class="cta">
-      <h2>«Soluciones Tecnológicas a Entera Satisfacción»</h2>
-      <p>Contáctanos y lleva tu empresa al siguiente nivel</p>
-    </section>
+    <!-- Sección CTA ELIMINADA -->
 
   </section>
 </template>
 
 <script setup>
 import Carousel from '@/components/Carousel.vue'
-
 
 const products = [
   { id: 1, name: 'Servidor Empresarial', image: '/img/product1.jpg' },
@@ -115,11 +110,4 @@ const partners = [
   height: 60px;
 }
 
-/* CTA */
-.cta {
-  background: #0ea5e9;
-  color: white;
-  text-align: center;
-  padding: 60px 40px;
-}
 </style>

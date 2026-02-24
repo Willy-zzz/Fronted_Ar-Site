@@ -1,17 +1,12 @@
 <template>
   <div class="contact-page">
 
-    <!-- HERO SECTION -->
-    <section class="contact-hero">
-      <div class="hero-overlay">
-        <div class="hero-content">
-          <h1 class="hero-title">Contáctanos</h1>
-          <p class="hero-subtitle">
-            Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- HERO REUTILIZABLE -->
+    <Hero
+      title="Contáctanos"
+      subtitle="Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo"
+      image="/img/mapRedesHero.jpg"
+    />
 
     <!-- MAIN CONTACT SECTION -->
     <section class="contact-main">
@@ -313,6 +308,7 @@
 import { reactive, ref, onMounted } from 'vue'
 import axios from 'axios'
 import VueRecaptcha from 'vue3-recaptcha2'
+import Hero from '@/components/Hero.vue'   // <-- Importamos el Hero
 
 // Estado del formulario
 const form = reactive({
@@ -341,7 +337,7 @@ onMounted(() => {
 // Manejar verificación del CAPTCHA
 const onCaptchaVerified = (token) => {
   captchaToken.value = token
-  errorMessage.value = '' // Limpiar error si había
+  errorMessage.value = ''
 }
 
 const onCaptchaExpired = () => {
@@ -375,26 +371,22 @@ const validateForm = () => {
 
 // Manejar envío del formulario
 const handleSubmit = async () => {
-  // Validar formulario
   const errors = validateForm()
   if (errors.length > 0) {
     errorMessage.value = errors[0]
     return
   }
   
-  // Validar CAPTCHA
   if (!captchaToken.value) {
     errorMessage.value = 'Por favor, verifica que no eres un robot'
     return
   }
   
-  // Iniciar carga
   loading.value = true
   errorMessage.value = ''
   successMessage.value = ''
   
   try {
-    // Preparar datos para enviar
     const formData = {
       ...form,
       captchaToken: captchaToken.value,
@@ -402,7 +394,6 @@ const handleSubmit = async () => {
       source: 'website_contact_form'
     }
     
-    // 🔵 Reemplaza esta URL con tu endpoint de Laravel cuando lo tengas
     const response = await axios.post('/api/contact', formData, {
       headers: {
         'Content-Type': 'application/json',
@@ -410,22 +401,18 @@ const handleSubmit = async () => {
       }
     })
     
-    // Éxito
     successMessage.value = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.'
     
-    // Resetear formulario
     Object.keys(form).forEach(key => {
       form[key] = ''
     })
     
-    // Resetear CAPTCHA
     captchaToken.value = null
     showCaptcha.value = false
     setTimeout(() => {
       showCaptcha.value = true
     }, 100)
     
-    // Opcional: enviar evento de Google Analytics
     if (window.gtag) {
       window.gtag('event', 'contact_form_submit', {
         'event_category': 'Contact',
@@ -437,7 +424,6 @@ const handleSubmit = async () => {
     console.error('Error al enviar formulario:', error)
     
     if (error.response) {
-      // Error del servidor
       switch (error.response.status) {
         case 422:
           errorMessage.value = 'Por favor verifica los datos del formulario'
@@ -449,10 +435,8 @@ const handleSubmit = async () => {
           errorMessage.value = 'Error al enviar el mensaje. Por favor, intenta nuevamente'
       }
     } else if (error.request) {
-      // Error de red
       errorMessage.value = 'Error de conexión. Por favor, verifica tu internet'
     } else {
-      // Error general
       errorMessage.value = 'Error inesperado. Por favor, intenta nuevamente'
     }
   } finally {
@@ -471,43 +455,6 @@ const handleSubmit = async () => {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-}
-
-/* Hero Section */
-.contact-hero {
-  position: relative;
-  height: 320px;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('/img/contact-bg.jpg') center/cover no-repeat;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  max-width: 800px;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  opacity: 0.9;
-  line-height: 1.6;
 }
 
 /* Main Contact Section */
@@ -879,14 +826,6 @@ const handleSubmit = async () => {
 }
 
 @media (max-width: 768px) {
-  .contact-hero {
-    height: 280px;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -918,14 +857,6 @@ const handleSubmit = async () => {
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
   .section-title {
     font-size: 1.5rem;
   }

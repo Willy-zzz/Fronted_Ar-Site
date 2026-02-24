@@ -8,15 +8,16 @@ import Partners from '../pages/Partners.vue'
 import Clients from '../pages/Clients.vue'
 import Support from '../pages/Support.vue'
 import Contact from '../pages/Contact.vue'
+import EnConstruccion from '../pages/EnConstruccion.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/nosotros', component: About },
-  { path: '/productos', component: Products },
-  { path: '/servicios', component: Services },
-  { path: '/partners', component: Partners },
-  { path: '/clientes', component: Clients },
-  { path: '/soporte', component: Support },
+  { path: '/productos', component: EnConstruccion },
+  { path: '/servicios', component: EnConstruccion },
+  { path: '/partners', component: EnConstruccion },
+  { path: '/clientes', component: /*Clients*/ EnConstruccion },
+  { path: '/soporte', component: EnConstruccion },
   { path: '/contacto', component: Contact }
 ]
 
