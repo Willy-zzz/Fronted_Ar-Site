@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import logo from '@/assets/LogoAr-Site4.png'
+import logo from '@/assets/LOGOARSITE.png'
 
 const open = ref(false)
 const scrolled = ref(false)

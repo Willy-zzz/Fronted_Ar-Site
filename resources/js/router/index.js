@@ -16,12 +16,23 @@ const routes = [
   { path: '/productos', component: EnConstruccion },
   { path: '/servicios', component: EnConstruccion },
   { path: '/partners', component: EnConstruccion },
-  { path: '/clientes', component: /*Clients*/ EnConstruccion },
+  { path: '/clientes', component: EnConstruccion },   // Mientras tanto, en construcción
   { path: '/soporte', component: EnConstruccion },
   { path: '/contacto', component: Contact }
 ]
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Si hay una posición guardada (por ejemplo, al usar "atrás" del navegador)
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      // Siempre ir al inicio de la página
+      return { top: 0, left: 0, behavior: 'smooth' } // behavior smooth opcional
+    }
+  }
 })
+
+export default router

@@ -205,7 +205,7 @@
             <!-- BOTONES DE CÓMO LLEGAR -->
             <div class="directions-buttons">
               <a 
-                href="https://maps.google.com/?q=Unión+161+Escandón+II+Secc+Miguel+Hidalgo+11800+Ciudad+de+México" 
+                href="https://maps.app.goo.gl/SXRJGMtRZXQ9KvjB9" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="direction-btn"
@@ -217,7 +217,7 @@
               </a>
               
               <a 
-                href="https://maps.google.com/?q=C.+Músicos+714+Gaviotas+Sur+Sector+San+Jose+86090+Villahermosa+Tab." 
+                href="https://maps.app.goo.gl/exshKZQPju5j1QXP6" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="direction-btn"
@@ -253,7 +253,7 @@
             </p>
             <div class="map-wrapper">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.123456789012!2d-99.180000!3d19.410000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI0JzM2LjAiTiA5OcKwMTAnNDguMCJX!5e0!3m2!1ses!2smx!4v1645581234567!5m2!1ses!2smx"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.271638610215!2d-99.1777069251984!3d19.400665881871898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6ec3915555%3A0xcc20aa555036a442!2sArsite%20integradores!5e0!3m2!1ses!2smx!4v1772040445284!5m2!1ses!2smx"
                 width="100%"
                 height="400"
                 style="border:0;"
@@ -283,7 +283,7 @@
             </p>
             <div class="map-wrapper">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3793.456789012345!2d-92.920000!3d18.010000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDAwJzM2LjAiTiA5MsKwNTUnMTIuMCJX!5e0!3m2!1ses!2smx!4v1645581300000!5m2!1ses!2smx"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3795.034679228402!2d-92.91004992523673!3d17.977123483014164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd9ad619b8499%3A0x5f31999cdf57f12!2sAr-Site%20Integradores!5e0!3m2!1ses!2smx!4v1772040242165!5m2!1ses!2smx"
                 width="100%"
                 height="400"
                 style="border:0;"

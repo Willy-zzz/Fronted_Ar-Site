@@ -1,10 +1,7 @@
 <template>
   <!-- HERO REUTILIZABLE -->
-  <Hero
-    title="Nosotros"
-    subtitle="Integración de Tecnologías de Información y Telecomunicaciones"
-    image="/img/mapRedesHero.jpg"
-  />
+  <Hero title="Nosotros" subtitle="Integración de Tecnologías de Información y Telecomunicaciones"
+    image="/img/mapRedesHero.jpg" />
 
   <section class="about">
     <!-- DESCRIPCIÓN CON AÑOS DE EXPERIENCIA Y SERVICIOS -->
@@ -63,8 +60,11 @@
     <!-- CERTIFICACIONES -->
     <div class="certifications fade-in">
       <h2 class="large-title">Certificaciones</h2>
-      <div class="cert-placeholder">
-        <p>Próximamente estaremos mostrando nuestras certificaciones y alianzas estratégicas.</p>
+      <div class="cert-grid">
+        <div v-for="cert in certifications" :key="cert.name" class="cert-item">
+          <img :src="cert.image" :alt="cert.name" />
+          <p>{{ cert.name }}</p>
+        </div>
       </div>
     </div>
 
@@ -73,11 +73,7 @@
       <h2 class="large-title">Premios y Reconocimientos</h2>
 
       <div class="awards-grid">
-        <div
-          v-for="(award, index) in awards"
-          :key="index"
-          class="award-card"
-        >
+        <div v-for="(award, index) in awards" :key="index" class="award-card">
           <span class="award-year">{{ award.year }}</span>
           <h3>{{ award.title }}</h3>
           <p v-if="award.description">{{ award.description }}</p>
@@ -89,6 +85,41 @@
 
 <script setup>
 import Hero from '@/components/Hero.vue'
+
+// Certificaciones (logos o insignias)
+const certifications = [
+  {
+    name: 'Aruba',
+    image: '/img/certificaciones/aruba-acmp.png'
+  },
+  {
+    name: 'Aruba',
+    image: '/img/certificaciones/aruba-acsa.png'
+  },
+  {
+    name: 'Aruba',
+    image: '/img/certificaciones/Aruba-acma.png'
+  },
+  {
+    name: 'Infoblox Core DDI',
+    image: '/img/certificaciones/core-ddi.webp'
+  },
+  {
+    name: 'Silver peak SD-WAN',
+    image: '/img/certificaciones/sd-wan.jpg'
+
+  },
+  {
+    name: 'PanduIT',
+    image: '/img/certificaciones/panduit-installer.gif'
+
+  },
+  {
+    name: 'Fortinet NSE 7',
+    image: '/img/certificaciones/fortinet-nse.png'
+
+  }
+]
 
 // Valores con sus descripciones completas
 const values = [
@@ -277,7 +308,8 @@ const awards = [
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* DOS COLUMNAS */
+  grid-template-columns: repeat(2, 1fr);
+  /* DOS COLUMNAS */
   gap: 25px;
   margin-top: 20px;
 }
@@ -292,11 +324,25 @@ const awards = [
   animation: fadeInUp 0.6s ease backwards;
 }
 
-.value-card:nth-child(1) { animation-delay: 0.1s; }
-.value-card:nth-child(2) { animation-delay: 0.2s; }
-.value-card:nth-child(3) { animation-delay: 0.3s; }
-.value-card:nth-child(4) { animation-delay: 0.4s; }
-.value-card:nth-child(5) { animation-delay: 0.5s; }
+.value-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.value-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.value-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.value-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.value-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
 .value-card h3 {
   color: #65B3CA;
@@ -329,20 +375,50 @@ const awards = [
 }
 
 .certifications h2.large-title {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.cert-placeholder {
-  background: #f5f5f5;
-  padding: 40px;
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cert-item {
+  background: #ffffff;
+  padding: 20px;
   border-radius: 12px;
-  color: #333;
-  border: 1px dashed #65B3CA;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eaeaea;
+  width: 100%;
+  max-width: 180px;
+  text-align: center;
 }
 
-.cert-placeholder:hover {
-  background: #e0f0f5;
+.cert-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(101, 179, 202, 0.2);
+  border-color: #65B3CA;
+}
+
+.cert-item img {
+  width: 100%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.cert-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
 }
 
 /* PREMIOS (GRID, SIN LÍNEA DE TIEMPO) */
@@ -372,18 +448,53 @@ const awards = [
   animation: fadeInUp 0.6s ease backwards;
 }
 
-.award-card:nth-child(1) { animation-delay: 0.1s; }
-.award-card:nth-child(2) { animation-delay: 0.15s; }
-.award-card:nth-child(3) { animation-delay: 0.2s; }
-.award-card:nth-child(4) { animation-delay: 0.25s; }
-.award-card:nth-child(5) { animation-delay: 0.3s; }
-.award-card:nth-child(6) { animation-delay: 0.35s; }
-.award-card:nth-child(7) { animation-delay: 0.4s; }
-.award-card:nth-child(8) { animation-delay: 0.45s; }
-.award-card:nth-child(9) { animation-delay: 0.5s; }
-.award-card:nth-child(10) { animation-delay: 0.55s; }
-.award-card:nth-child(11) { animation-delay: 0.6s; }
-.award-card:nth-child(12) { animation-delay: 0.65s; }
+.award-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.award-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.award-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.award-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.award-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.award-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+.award-card:nth-child(7) {
+  animation-delay: 0.4s;
+}
+
+.award-card:nth-child(8) {
+  animation-delay: 0.45s;
+}
+
+.award-card:nth-child(9) {
+  animation-delay: 0.5s;
+}
+
+.award-card:nth-child(10) {
+  animation-delay: 0.55s;
+}
+
+.award-card:nth-child(11) {
+  animation-delay: 0.6s;
+}
+
+.award-card:nth-child(12) {
+  animation-delay: 0.65s;
+}
 
 .award-card:hover {
   transform: translateY(-5px);
@@ -418,6 +529,17 @@ const awards = [
 @media (max-width: 600px) {
   .values-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .cert-item {
+    padding: 15px;
+  }
+  .cert-item img {
+    max-height: 60px;
   }
 }
 </style>

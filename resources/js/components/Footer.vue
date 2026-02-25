@@ -36,6 +36,7 @@ const year = new Date().getFullYear();
 
 /* Estilos para la nueva sección CTA */
 .footer-cta {
+  background: #78c2e7;
   text-align: center;
   padding: 40px 20px;
   border-bottom: 1px solid rgba(255,255,255,0.2);
