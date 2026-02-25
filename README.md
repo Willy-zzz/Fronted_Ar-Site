@@ -1,3 +1,5 @@
+resources\js\assets\LogoAr-Site4.png
+
 # ARSITE Website
 
 Sitio web corporativo de ARSITE desarrollado con Laravel y Vue.js.
