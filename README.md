@@ -1,4 +1,4 @@
-![ARSITE Website](resources/js/assets/LogoAr-Site4.png)
+![ARSITE Website](Images/LogoAr-Site4.png)
 
 # ARSITE Website
 
