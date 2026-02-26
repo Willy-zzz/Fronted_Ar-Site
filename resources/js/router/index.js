@@ -9,6 +9,7 @@ import Clients from '../pages/Clients.vue'
 import Support from '../pages/Support.vue'
 import Contact from '../pages/Contact.vue'
 import EnConstruccion from '../pages/EnConstruccion.vue'
+import NotFound from '../pages/NotFound.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -18,7 +19,10 @@ const routes = [
   { path: '/partners', component: EnConstruccion },
   { path: '/clientes', component: EnConstruccion },   // Mientras tanto, en construcción
   { path: '/soporte', component: EnConstruccion },
-  { path: '/contacto', component: Contact }
+  { path: '/contacto', component: Contact },
+  { path: '/:pathMatch(.*)*', component: NotFound },
+  
+  
 ]
 
 const router = createRouter({

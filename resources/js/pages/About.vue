@@ -1,10 +1,14 @@
 <template>
-  <!-- HERO REUTILIZABLE -->
-  <Hero title="Nosotros" subtitle="Integración de Tecnologías de Información y Telecomunicaciones"
-    image="/img/mapRedesHero.jpg" />
+  <!-- HERO FULL WIDTH -->
+  <Hero 
+    title="Nosotros" 
+    subtitle="Integración de Tecnologías de Información y Telecomunicaciones"
+    image="/img/mapRedesHero.jpg" 
+  />
 
-  <section class="about">
-    <!-- DESCRIPCIÓN CON AÑOS DE EXPERIENCIA Y SERVICIOS -->
+  <!-- CONTENIDO LIMITADO POR EL CONTENEDOR GLOBAL -->
+  <section class="about container">
+    <!-- DESCRIPCIÓN -->
     <div class="description fade-in">
       <h2 class="large-title">18 Años de Experiencia</h2>
       <p>
@@ -43,11 +47,10 @@
       </div>
     </div>
 
-    <!-- VALORES (CON DESCRIPCIONES COMPLETAS) -->
+    <!-- VALORES -->
     <div class="values-section fade-in">
       <div class="inner">
         <h2 class="large-title">Valores</h2>
-
         <div class="values-grid">
           <div v-for="value in values" :key="value.title" class="value-card">
             <h3>{{ value.title }}</h3>
@@ -68,10 +71,9 @@
       </div>
     </div>
 
-    <!-- PREMIOS Y RECONOCIMIENTOS (SIN LÍNEA DE TIEMPO) -->
+    <!-- PREMIOS -->
     <div class="awards fade-in">
       <h2 class="large-title">Premios y Reconocimientos</h2>
-
       <div class="awards-grid">
         <div v-for="(award, index) in awards" :key="index" class="award-card">
           <span class="award-year">{{ award.year }}</span>
@@ -86,77 +88,47 @@
 <script setup>
 import Hero from '@/components/Hero.vue'
 
-// Certificaciones (logos o insignias)
+// Certificaciones
 const certifications = [
-  {
-    name: 'Aruba',
-    image: '/img/certificaciones/aruba-acmp.png'
-  },
-  {
-    name: 'Aruba',
-    image: '/img/certificaciones/aruba-acsa.png'
-  },
-  {
-    name: 'Aruba',
-    image: '/img/certificaciones/Aruba-acma.png'
-  },
-  {
-    name: 'Infoblox Core DDI',
-    image: '/img/certificaciones/core-ddi.webp'
-  },
-  {
-    name: 'Silver peak SD-WAN',
-    image: '/img/certificaciones/sd-wan.jpg'
-
-  },
-  {
-    name: 'PanduIT',
-    image: '/img/certificaciones/panduit-installer.gif'
-
-  },
-  {
-    name: 'Fortinet NSE 7',
-    image: '/img/certificaciones/fortinet-nse.png'
-
-  }
+  { name: 'Aruba', image: '/img/certificaciones/aruba-acmp.png' },
+  { name: 'Aruba', image: '/img/certificaciones/aruba-acsa.png' },
+  { name: 'Aruba', image: '/img/certificaciones/Aruba-acma.png' },
+  { name: 'Infoblox Core DDI', image: '/img/certificaciones/core-ddi.webp' },
+  { name: 'Silver peak SD-WAN', image: '/img/certificaciones/sd-wan.jpg' },
+  { name: 'PanduIT', image: '/img/certificaciones/panduit-installer.gif' },
+  { name: 'Fortinet NSE 7', image: '/img/certificaciones/fortinet-nse.png' }
 ]
 
-// Valores con sus descripciones completas
+// Valores
 const values = [
   {
     title: 'Honestidad',
-    description:
-      'Buscamos ser siempre claros y objetivos con nuestros clientes, dando la mejor solución reflejada en costo/beneficio, para el pleno cumplimiento de los compromisos.'
+    description: 'Buscamos ser siempre claros y objetivos con nuestros clientes, dando la mejor solución reflejada en costo/beneficio, para el pleno cumplimiento de los compromisos.'
   },
   {
     title: 'Calidad',
-    description:
-      'Es el estilo de vida que buscamos para nosotros en cada una de las cosas que emprendemos a través de la mejora continua en procesos humanos y de servicios.'
+    description: 'Es el estilo de vida que buscamos para nosotros en cada una de las cosas que emprendemos a través de la mejora continua en procesos humanos y de servicios.'
   },
   {
     title: 'Innovación',
-    description:
-      'Tenemos siempre una actitud proactiva ante nuevas tecnologías y nuevos productos, con la finalidad de aprender, difundir conocimientos y mejorar nuestra relación de servicio con el cliente.'
+    description: 'Tenemos siempre una actitud proactiva ante nuevas tecnologías y nuevos productos, con la finalidad de aprender, difundir conocimientos y mejorar nuestra relación de servicio con el cliente.'
   },
   {
     title: 'Excelencia',
-    description:
-      'Estamos comprometidos a adquirir continuamente conocimientos en tecnologías de información, mejorar nuestros servicios y atención con lo cual mantenemos la plena confianza de nuestros clientes.'
+    description: 'Estamos comprometidos a adquirir continuamente conocimientos en tecnologías de información, mejorar nuestros servicios y atención con lo cual mantenemos la plena confianza de nuestros clientes.'
   },
   {
     title: 'Unidad',
-    description:
-      'Trabajamos fomentando la integración de equipos con el propósito de alcanzar metas comunes y así de satisfacer las necesidades tecnológicas de nuestros clientes.'
+    description: 'Trabajamos fomentando la integración de equipos con el propósito de alcanzar metas comunes y así de satisfacer las necesidades tecnológicas de nuestros clientes.'
   }
 ]
 
-// Historial completo de premios, eventos y reconocimientos
+// Premios
 const awards = [
   {
     year: '2006',
     title: 'The Best New Performance Partner',
-    description:
-      'Premio otorgado por Fortinet cuando ARSITE hizo el mejor branding de la marca en el sureste, a pesar de ser una empresa que llevaba poco tiempo formada. ARSITE hizo el mejor trabajo para dar a conocer la marca de Fortinet, al comprar equipos demos, cursos y eventos. Arsite hizo algo que ningún otro partner había logrado.'
+    description: 'Premio otorgado por Fortinet cuando ARSITE hizo el mejor branding de la marca en el sureste, a pesar de ser una empresa que llevaba poco tiempo formada. ARSITE hizo el mejor trabajo para dar a conocer la marca de Fortinet, al comprar equipos demos, cursos y eventos. Arsite hizo algo que ningún otro partner había logrado.'
   },
   {
     year: '2007',
@@ -175,8 +147,7 @@ const awards = [
   {
     year: '2009',
     title: 'The Best Fortinet National Deployment',
-    description:
-      'Otorgado porque ARSITE logró tener una de las mejores implementaciones a nivel nacional.'
+    description: 'Otorgado porque ARSITE logró tener una de las mejores implementaciones a nivel nacional.'
   },
   {
     year: '2009',
@@ -211,21 +182,18 @@ const awards = [
   {
     year: '2016',
     title: 'Premio Monarca',
-    description:
-      'Premio otorgado por Hewlett Packard Enterprise por ser el canal con mayor volumen de ventas de ARUBA.'
+    description: 'Premio otorgado por Hewlett Packard Enterprise por ser el canal con mayor volumen de ventas de ARUBA.'
   }
 ]
 </script>
 
 <style scoped>
+/* Estilos específicos de la página Nosotros */
 .about {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  box-sizing: border-box;
   background: #ffffff;
   color: #000;
   font-family: Arial, sans-serif;
+  padding: 80px 0; /* padding vertical, el horizontal lo da .container global */
 }
 
 /* TÍTULOS GRANDES */
@@ -254,10 +222,9 @@ const awards = [
 /* DESCRIPCIÓN */
 .description {
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto 60px; /* centrado dentro del container */
   text-align: center;
   line-height: 1.8;
-  margin-bottom: 60px;
 }
 
 /* MISIÓN Y VISIÓN */
@@ -309,7 +276,6 @@ const awards = [
 .values-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* DOS COLUMNAS */
   gap: 25px;
   margin-top: 20px;
 }
@@ -324,25 +290,11 @@ const awards = [
   animation: fadeInUp 0.6s ease backwards;
 }
 
-.value-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.value-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.value-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.value-card:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.value-card:nth-child(5) {
-  animation-delay: 0.5s;
-}
+.value-card:nth-child(1) { animation-delay: 0.1s; }
+.value-card:nth-child(2) { animation-delay: 0.2s; }
+.value-card:nth-child(3) { animation-delay: 0.3s; }
+.value-card:nth-child(4) { animation-delay: 0.4s; }
+.value-card:nth-child(5) { animation-delay: 0.5s; }
 
 .value-card h3 {
   color: #65B3CA;
@@ -421,9 +373,9 @@ const awards = [
   font-weight: 500;
 }
 
-/* PREMIOS (GRID, SIN LÍNEA DE TIEMPO) */
+/* PREMIOS */
 .awards {
-  padding: 20px 20px 80px;
+  padding: 20px 0 80px;
   text-align: center;
 }
 
@@ -448,53 +400,18 @@ const awards = [
   animation: fadeInUp 0.6s ease backwards;
 }
 
-.award-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.award-card:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.award-card:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.award-card:nth-child(4) {
-  animation-delay: 0.25s;
-}
-
-.award-card:nth-child(5) {
-  animation-delay: 0.3s;
-}
-
-.award-card:nth-child(6) {
-  animation-delay: 0.35s;
-}
-
-.award-card:nth-child(7) {
-  animation-delay: 0.4s;
-}
-
-.award-card:nth-child(8) {
-  animation-delay: 0.45s;
-}
-
-.award-card:nth-child(9) {
-  animation-delay: 0.5s;
-}
-
-.award-card:nth-child(10) {
-  animation-delay: 0.55s;
-}
-
-.award-card:nth-child(11) {
-  animation-delay: 0.6s;
-}
-
-.award-card:nth-child(12) {
-  animation-delay: 0.65s;
-}
+.award-card:nth-child(1) { animation-delay: 0.1s; }
+.award-card:nth-child(2) { animation-delay: 0.15s; }
+.award-card:nth-child(3) { animation-delay: 0.2s; }
+.award-card:nth-child(4) { animation-delay: 0.25s; }
+.award-card:nth-child(5) { animation-delay: 0.3s; }
+.award-card:nth-child(6) { animation-delay: 0.35s; }
+.award-card:nth-child(7) { animation-delay: 0.4s; }
+.award-card:nth-child(8) { animation-delay: 0.45s; }
+.award-card:nth-child(9) { animation-delay: 0.5s; }
+.award-card:nth-child(10) { animation-delay: 0.55s; }
+.award-card:nth-child(11) { animation-delay: 0.6s; }
+.award-card:nth-child(12) { animation-delay: 0.65s; }
 
 .award-card:hover {
   transform: translateY(-5px);
@@ -525,7 +442,7 @@ const awards = [
   font-size: 0.95rem;
 }
 
-/* RESPONSIVE: en móviles los valores pasan a 1 columna */
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .values-grid {
     grid-template-columns: 1fr;

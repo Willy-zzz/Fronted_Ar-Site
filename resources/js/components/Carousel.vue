@@ -84,7 +84,7 @@ const slides = ref([
   },
   // Puedes añadir más slides aquí
   {
-    image: '/img/slide4.webp',
+    image: '/img/slide4.png',
     title: 'Envío <span class="highlight">Gratis</span>',
     description: 'En todos los pedidos superiores a $50. Disfruta de nuestras promociones especiales.',
     link: {

@@ -1,46 +1,41 @@
 <template>
-  <section class="home">
-
-    <!-- Carrusel -->
+  <div>
+    <!-- Carrusel (siempre a ancho completo) -->
     <Carousel />
 
-    <!-- Sección 1: Hero -->
-    <section class="hero">
-      <h1>Bienvenido a ARSITE</h1>
-      <p>Somos una compañía de telecomunicaciones, informática y seguridad de la información, 
-        certificada por nuestros partners. Nuestro mercado incluye el sector privado, el gobierno y 
-        las instituciones educativas, Atendiendo a las crecientes necesidades de productos y servicios de 
-        telecomunicaciones que están en demanda en estos sectores.</p>
-    </section>
+    <!-- Contenido limitado por el contenedor global -->
+    <div class="home container">
+      <!-- Sección Hero -->
+      <section class="hero">
+        <h1>Bienvenido a ARSITE</h1>
+        <p>
+          Somos una compañía de telecomunicaciones, informática y seguridad de la información, 
+          certificada por nuestros partners. Nuestro mercado incluye el sector privado, el gobierno y 
+          las instituciones educativas, Atendiendo a las crecientes necesidades de productos y servicios de 
+          telecomunicaciones que están en demanda en estos sectores.
+        </p>
+      </section>
 
-    <!-- Sección 2: Productos -->
-    <section class="products">
-      <h2>Productos</h2>
-
-      <div class="grid">
-        <div class="card" v-for="product in products" :key="product.id">
-          <img :src="product.image" />
-          <h3>{{ product.name }}</h3>
+      <!-- Sección Productos -->
+      <section class="products">
+        <h2>Productos</h2>
+        <div class="grid">
+          <div class="card" v-for="product in products" :key="product.id">
+            <img :src="product.image" />
+            <h3>{{ product.name }}</h3>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Sección 3: Partners -->
-    <section class="partners">
-      <h2>Partners</h2>
-
-      <div class="logos">
-        <img
-          v-for="partner in partners"
-          :key="partner.id"
-          :src="partner.logo"
-        />
-      </div>
-    </section>
-
-    <!-- Sección CTA ELIMINADA -->
-
-  </section>
+      <!-- Sección Partners -->
+      <section class="partners">
+        <h2>Partners</h2>
+        <div class="logos">
+          <img v-for="partner in partners" :key="partner.id" :src="partner.logo" />
+        </div>
+      </section>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -61,41 +56,58 @@ const partners = [
 
 <style scoped>
 .home {
-  padding: 0;
+  background: #ffffff;
+  padding: 60px 0; /* Padding vertical, el horizontal lo da .container */
 }
 
 /* Hero */
 .hero {
-  padding: 60px 40px;
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
 }
 
-/* Grid reusable */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #65B3CA;
+}
+
+/* Títulos de secciones */
+.products h2,
+.partners h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #65B3CA;
+  margin-bottom: 40px;
+}
+
+/* Grid de productos */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
-  padding: 40px;
+  margin-bottom: 40px;
 }
 
-/* Cards */
 .card {
   background: #f8f8f8;
   padding: 24px;
   border-radius: 8px;
+  text-align: center;
 }
 
-/* Productos */
 .card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
   margin-bottom: 12px;
+  border-radius: 8px;
 }
 
 /* Partners */
 .partners {
-  padding: 40px;
   text-align: center;
 }
 
@@ -108,6 +120,25 @@ const partners = [
 
 .logos img {
   height: 60px;
+  filter: grayscale(0.5);
+  transition: filter 0.3s;
 }
 
+.logos img:hover {
+  filter: grayscale(0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .products h2,
+  .partners h2 {
+    font-size: 2rem;
+  }
+  .grid {
+    gap: 16px;
+  }
+}
 </style>

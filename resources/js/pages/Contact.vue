@@ -1,241 +1,236 @@
 <template>
   <div class="contact-page">
-
-    <!-- HERO REUTILIZABLE -->
+    <!-- HERO FULL WIDTH -->
     <Hero
       title="Contáctanos"
       subtitle="Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo"
       image="/img/mapRedesHero.jpg"
     />
 
-    <!-- MAIN CONTACT SECTION -->
-    <section class="contact-main">
-      <div class="page-container">
-        <div class="contact-grid">
+    <!-- MAIN CONTACT SECTION (CONTENIDO LIMITADO) -->
+    <section class="contact-main container">
+      <div class="contact-grid">
+        <!-- FORMULARIO DE CONTACTO -->
+        <div class="contact-form-section">
+          <h2 class="section-title">Envíanos un mensaje</h2>
+          <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo</p>
 
-          <!-- FORMULARIO DE CONTACTO -->
-          <div class="contact-form-section">
-            <h2 class="section-title">Envíanos un mensaje</h2>
-            <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo</p>
-
-            <form @submit.prevent="handleSubmit" class="contact-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <input 
-                    v-model="form.nombre" 
-                    placeholder="Nombre *" 
-                    required 
-                    class="form-input"
-                  />
-                </div>
-                <div class="form-group">
-                  <input 
-                    v-model="form.apellido" 
-                    placeholder="Apellido *" 
-                    required 
-                    class="form-input"
-                  />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <input 
-                    v-model="form.telefono" 
-                    placeholder="Teléfono *" 
-                    required 
-                    class="form-input"
-                    type="tel"
-                  />
-                </div>
-                <div class="form-group">
-                  <input 
-                    v-model="form.email" 
-                    placeholder="Email *" 
-                    required 
-                    class="form-input"
-                    type="email"
-                  />
-                </div>
-              </div>
-
+          <form @submit.prevent="handleSubmit" class="contact-form">
+            <div class="form-row">
               <div class="form-group">
                 <input 
-                  v-model="form.compania" 
-                  placeholder="Compañía" 
+                  v-model="form.nombre" 
+                  placeholder="Nombre *" 
+                  required 
                   class="form-input"
                 />
               </div>
-
               <div class="form-group">
-                <textarea
-                  v-model="form.mensaje"
-                  rows="6"
-                  placeholder="Mensaje *"
-                  required
-                  class="form-textarea"
-                ></textarea>
-              </div>
-
-              <!-- CAPTCHA -->
-              <div class="captcha-box">
-                <VueRecaptcha
-                  v-if="showCaptcha"
-                  sitekey="AQUI_TU_SITE_KEY"
-                  @verify="onCaptchaVerified"
-                  @expire="onCaptchaExpired"
-                  size="normal"
-                  theme="light"
+                <input 
+                  v-model="form.apellido" 
+                  placeholder="Apellido *" 
+                  required 
+                  class="form-input"
                 />
-                <p v-if="!showCaptcha" class="captcha-loading">
-                  Cargando CAPTCHA...
-                </p>
               </div>
+            </div>
 
-              <button 
-                type="submit" 
-                class="submit-btn"
-                :disabled="loading || !captchaToken"
-              >
-                <span v-if="loading">
-                  <span class="spinner"></span>
-                  Enviando...
-                </span>
-                <span v-else>
-                  Enviar mensaje
-                </span>
-              </button>
+            <div class="form-row">
+              <div class="form-group">
+                <input 
+                  v-model="form.telefono" 
+                  placeholder="Teléfono *" 
+                  required 
+                  class="form-input"
+                  type="tel"
+                />
+              </div>
+              <div class="form-group">
+                <input 
+                  v-model="form.email" 
+                  placeholder="Email *" 
+                  required 
+                  class="form-input"
+                  type="email"
+                />
+              </div>
+            </div>
 
-              <!-- MENSAJES DE ESTADO -->
-              <div v-if="successMessage" class="message success">
-                <svg class="message-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div class="form-group">
+              <input 
+                v-model="form.compania" 
+                placeholder="Compañía" 
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <textarea
+                v-model="form.mensaje"
+                rows="6"
+                placeholder="Mensaje *"
+                required
+                class="form-textarea"
+              ></textarea>
+            </div>
+
+            <!-- CAPTCHA -->
+            <div class="captcha-box">
+              <VueRecaptcha
+                v-if="showCaptcha"
+                sitekey="AQUI_TU_SITE_KEY"
+                @verify="onCaptchaVerified"
+                @expire="onCaptchaExpired"
+                size="normal"
+                theme="light"
+              />
+              <p v-if="!showCaptcha" class="captcha-loading">
+                Cargando CAPTCHA...
+              </p>
+            </div>
+
+            <button 
+              type="submit" 
+              class="submit-btn"
+              :disabled="loading || !captchaToken"
+            >
+              <span v-if="loading">
+                <span class="spinner"></span>
+                Enviando...
+              </span>
+              <span v-else>
+                Enviar mensaje
+              </span>
+            </button>
+
+            <!-- MENSAJES DE ESTADO -->
+            <div v-if="successMessage" class="message success">
+              <svg class="message-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {{ successMessage }}
+            </div>
+
+            <div v-if="errorMessage" class="message error">
+              <svg class="message-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {{ errorMessage }}
+            </div>
+          </form>
+        </div>
+
+        <!-- INFORMACIÓN DE CONTACTO -->
+        <div class="contact-info-section">
+          <h2 class="section-title">Información de contacto</h2>
+          <p class="section-subtitle">Puedes contactarnos por estos medios</p>
+
+          <div class="info-grid">
+            <!-- TELÉFONOS -->
+            <div class="info-card">
+              <div class="info-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                {{ successMessage }}
               </div>
+              <div class="info-content">
+                <h3>Teléfonos</h3>
+                <div class="phone-numbers">
+                  <p><strong>CDMX:</strong></p>
+                  <p><a href="tel:+525563903399">+52 55 6390 33 99</a></p>
+                  <p><a href="tel:+525586625580">+52 55 8662 55 80</a></p>
+                  <p><a href="tel:+525586625581">+52 55 8662 55 81</a></p>
+                  <p><a href="tel:+525586625582">+52 55 8662 55 82</a></p>
+                  <p><strong>Villahermosa:</strong></p>
+                  <p><a href="tel:+529933657804">+52 993 3 65 78 04</a></p>
+                </div>
+              </div>
+            </div>
 
-              <div v-if="errorMessage" class="message error">
-                <svg class="message-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <!-- EMAILS -->
+            <div class="info-card">
+              <div class="info-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                {{ errorMessage }}
               </div>
-            </form>
+              <div class="info-content">
+                <h3>Email</h3>
+                <p><a href="mailto:contacto@arsite.com.mx">contacto@arsite.com.mx</a></p>
+                <p><a href="mailto:ventas@arsite.com.mx">ventas@arsite.com.mx</a></p>
+              </div>
+            </div>
+
+            <!-- UBICACIONES -->
+            <div class="info-card">
+              <div class="info-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div class="info-content">
+                <h3>Oficinas</h3>
+                <div class="locations">
+                  <p><strong>CDMX:</strong></p>
+                  <p>Unión 161, Escandón II Secc, Miguel Hidalgo, 11800 Ciudad de México, CDMX</p>
+                  <p><strong>Villahermosa:</strong></p>
+                  <p>C. Músicos 714, Gaviotas Sur Sector San Jose, 86090 Villahermosa, Tab.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- HORARIOS -->
+            <div class="info-card">
+              <div class="info-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="info-content">
+                <h3>Horario de oficina</h3>
+                <div class="schedule">
+                  <p><strong>Lunes – Viernes:</strong></p>
+                  <p>9:00 AM a 6:00 PM</p>
+                  <p class="note">Sábados con cita previa</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- INFORMACIÓN DE CONTACTO -->
-          <div class="contact-info-section">
-            <h2 class="section-title">Información de contacto</h2>
-            <p class="section-subtitle">Puedes contactarnos por estos medios</p>
-
-            <div class="info-grid">
-              <!-- TELÉFONOS -->
-              <div class="info-card">
-                <div class="info-icon">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div class="info-content">
-                  <h3>Teléfonos</h3>
-                  <div class="phone-numbers">
-                    <p><strong>CDMX:</strong></p>
-                    <p><a href="tel:+525563903399">+52 55 6390 33 99</a></p>
-                    <p><a href="tel:+525586625580">+52 55 8662 55 80</a></p>
-                    <p><a href="tel:+525586625581">+52 55 8662 55 81</a></p>
-                    <p><a href="tel:+525586625582">+52 55 8662 55 82</a></p>
-                    <p><strong>Villahermosa:</strong></p>
-                    <p><a href="tel:+529933657804">+52 993 3 65 78 04</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- EMAILS -->
-              <div class="info-card">
-                <div class="info-icon">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div class="info-content">
-                  <h3>Email</h3>
-                  <p><a href="mailto:contacto@arsite.com.mx">contacto@arsite.com.mx</a></p>
-                  <p><a href="mailto:ventas@arsite.com.mx">ventas@arsite.com.mx</a></p>
-                </div>
-              </div>
-
-              <!-- UBICACIONES -->
-              <div class="info-card">
-                <div class="info-icon">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div class="info-content">
-                  <h3>Oficinas</h3>
-                  <div class="locations">
-                    <p><strong>CDMX:</strong></p>
-                    <p>Unión 161, Escandón II Secc, Miguel Hidalgo, 11800 Ciudad de México, CDMX</p>
-                    
-                    <p><strong>Villahermosa:</strong></p>
-                    <p>C. Músicos 714, Gaviotas Sur Sector San Jose, 86090 Villahermosa, Tab.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- HORARIOS -->
-              <div class="info-card">
-                <div class="info-icon">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div class="info-content">
-                  <h3>Horario de oficina</h3>
-                  <div class="schedule">
-                    <p><strong>Lunes – Viernes:</strong></p>
-                    <p>9:00 AM a 6:00 PM</p>
-                    <p class="note">Sábados con cita previa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- BOTONES DE CÓMO LLEGAR -->
-            <div class="directions-buttons">
-              <a 
-                href="https://maps.app.goo.gl/SXRJGMtRZXQ9KvjB9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="direction-btn"
-              >
-                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-                Cómo llegar a CDMX
-              </a>
-              
-              <a 
-                href="https://maps.app.goo.gl/exshKZQPju5j1QXP6" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="direction-btn"
-              >
-                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-                Cómo llegar a Villahermosa
-              </a>
-            </div>
+          <!-- BOTONES DE CÓMO LLEGAR -->
+          <div class="directions-buttons">
+            <a 
+              href="https://maps.app.goo.gl/SXRJGMtRZXQ9KvjB9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="direction-btn"
+            >
+              <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              Cómo llegar a CDMX
+            </a>
+            
+            <a 
+              href="https://maps.app.goo.gl/exshKZQPju5j1QXP6" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="direction-btn"
+            >
+              <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              Cómo llegar a Villahermosa
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MAPAS -->
+    <!-- MAPAS (SECCIÓN COMPLETA CON FONDO, PERO CONTENIDO INTERNO LIMITADO) -->
     <section class="maps-section">
-      <div class="page-container">
+      <div class="container">
         <h2 class="maps-title">Nuestras ubicaciones</h2>
         
         <div class="maps-grid">
@@ -308,7 +303,7 @@
 import { reactive, ref, onMounted } from 'vue'
 import axios from 'axios'
 import VueRecaptcha from 'vue3-recaptcha2'
-import Hero from '@/components/Hero.vue'   // <-- Importamos el Hero
+import Hero from '@/components/Hero.vue'
 
 // Estado del formulario
 const form = reactive({
@@ -451,15 +446,9 @@ const handleSubmit = async () => {
   min-height: 100vh;
 }
 
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 /* Main Contact Section */
 .contact-main {
-  padding: 4rem 0;
+  padding: 4rem 0;  /* padding vertical, el horizontal lo da .container */
   background: #f8fafc;
 }
 

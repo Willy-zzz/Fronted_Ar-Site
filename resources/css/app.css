@@ -18,6 +18,13 @@
 /* ============================= */
 /* RESET COMPLETO */
 /* ============================= */
+.container {
+  max-width: 1100px;    /* Ajusta el ancho máximo que prefieras */
+  margin: 0 auto;       /* Centra horizontalmente */
+  padding: 0 20px;      /* Espaciado lateral en móviles */
+  width: 100%;          /* Ocupa todo el ancho hasta el max-width */
+  box-sizing: border-box;
+}
 
 * {
   margin: 0;

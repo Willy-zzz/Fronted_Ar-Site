@@ -123,7 +123,7 @@ onUnmounted(() => {
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 740px) {
+@media (max-width: 820px) {
 
   .hamburger {
     display: block;
