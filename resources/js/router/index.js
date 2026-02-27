@@ -10,18 +10,20 @@ import Support from '../pages/Support.vue'
 import Contact from '../pages/Contact.vue'
 import EnConstruccion from '../pages/EnConstruccion.vue'
 import NotFound from '../pages/NotFound.vue'
+import ProductoDetalle from '../pages/ProductoDetalle.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/nosotros', component: About },
-  { path: '/productos', component: EnConstruccion },
+  { path: '/productos', component: Products },
   { path: '/servicios', component: EnConstruccion },
   { path: '/partners', component: EnConstruccion },
   { path: '/clientes', component: EnConstruccion },   // Mientras tanto, en construcción
   { path: '/soporte', component: EnConstruccion },
   { path: '/contacto', component: Contact },
   { path: '/:pathMatch(.*)*', component: NotFound },
-  
+  // Productos 
+  { path: '/producto/:id', component: ProductoDetalle }
   
 ]
 

@@ -124,8 +124,8 @@ onUnmounted(() => {
 <style scoped>
 /* Contenedor principal con los márgenes */
 .carousel-container {
-  width: calc(100% - 440px);
-  max-width: 1400px;
+  width: calc(100% - 240px);
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   padding: 0;
@@ -151,7 +151,8 @@ onUnmounted(() => {
 .carousel img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /*cover*/
+  background-color: #000;
   transition: opacity 0.5s ease;
   display: block;
 }
