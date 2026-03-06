@@ -78,7 +78,7 @@
             <div class="captcha-box">
               <VueRecaptcha
                 v-if="showCaptcha"
-                sitekey="AQUI_TU_SITE_KEY"
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                 @verify="onCaptchaVerified"
                 @expire="onCaptchaExpired"
                 size="normal"
@@ -510,7 +510,7 @@ const handleSubmit = async () => {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #78c2e7;
   background: white;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
@@ -538,7 +538,7 @@ const handleSubmit = async () => {
 .submit-btn {
   width: 100%;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #65B3CA 0%, #3b82f6 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -626,7 +626,7 @@ const handleSubmit = async () => {
   padding: 1.5rem;
   background: #f8fafc;
   border-radius: 12px;
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid #78c2e7;
   transition: transform 0.3s;
 }
 
@@ -638,7 +638,7 @@ const handleSubmit = async () => {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #65B3CA 100%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -678,7 +678,7 @@ const handleSubmit = async () => {
 }
 
 .info-content a {
-  color: #3b82f6;
+  color: #2ea3f2;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -712,11 +712,11 @@ const handleSubmit = async () => {
 }
 
 .direction-btn:hover {
-  background: #3b82f6;
+  background: #78c2e7;
   color: white;
-  border-color: #3b82f6;
+  border-color: #78c2e7;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 5px 15px rgba(120, 194, 231, 0.2);
 }
 
 .btn-icon {
@@ -764,7 +764,7 @@ const handleSubmit = async () => {
 .map-icon {
   width: 24px;
   height: 24px;
-  color: #3b82f6;
+  color: #2ea3f2;
 }
 
 .map-address {
@@ -795,11 +795,12 @@ const handleSubmit = async () => {
 }
 
 .map-info a {
-  color: #3b82f6;
+  color: #2ea3f2;
   text-decoration: none;
 }
 
 .map-info a:hover {
+  color: #3b82f6;
   text-decoration: underline;
 }
 

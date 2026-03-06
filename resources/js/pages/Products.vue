@@ -4,7 +4,7 @@
     <Hero
       title="Productos"
       subtitle="Equipos y soluciones para redes, seguridad y conectividad"
-      image="/img/hero-productos.png"
+      image="/img/mapRedesHero.jpg" 
     />
 
     <!-- CONTENIDO LIMITADO POR EL CONTENEDOR GLOBAL -->

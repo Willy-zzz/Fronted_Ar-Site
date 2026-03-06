@@ -11,19 +11,23 @@ import Contact from '../pages/Contact.vue'
 import EnConstruccion from '../pages/EnConstruccion.vue'
 import NotFound from '../pages/NotFound.vue'
 import ProductoDetalle from '../pages/ProductoDetalle.vue'
+import Terminos from '../pages/Terminos.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/nosotros', component: About },
   { path: '/productos', component: Products },
-  { path: '/servicios', component: EnConstruccion },
-  { path: '/partners', component: EnConstruccion },
+  { path: '/servicios', component: Services },
+  { path: '/partners', component: Partners },
   { path: '/clientes', component: EnConstruccion },   // Mientras tanto, en construcción
   { path: '/soporte', component: EnConstruccion },
   { path: '/contacto', component: Contact },
-  { path: '/:pathMatch(.*)*', component: NotFound },
+  { path: '/terminos', component: Terminos },
   // Productos 
-  { path: '/producto/:id', component: ProductoDetalle }
+  { path: '/producto/:id', component: ProductoDetalle },
+
+  // 404
+  { path: '/:pathMatch(.*)*', component: NotFound },
   
 ]
 

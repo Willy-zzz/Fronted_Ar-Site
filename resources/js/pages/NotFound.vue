@@ -1,7 +1,11 @@
 <template>
     <div class="not-found-page">
         <!-- Hero con clase personalizada para estilos únicos -->
-        <Hero class="notfound-hero" title="404" subtitle="Página no encontrada" image="/img/404-bg.png" />
+        <Hero class="notfound-hero" 
+            title="404" 
+            subtitle="Página no encontrada" 
+            image="/img/404-bg.png" 
+        />
 
         <!-- Contenido adicional -->
         <section class="not-found-content">

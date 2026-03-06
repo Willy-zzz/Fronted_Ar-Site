@@ -1,22 +1,16 @@
 <template>
   <footer class="footer">
-    <!-- Nueva sección CTA dentro del footer -->
+    <!-- Sección CTA -->
     <div class="footer-cta">
       <h2>«Soluciones Tecnológicas a Entera Satisfacción»</h2>
       <p>Contáctanos y lleva tu empresa al siguiente nivel</p>
       <router-link to="/contacto" class="cta-button">Contáctanos</router-link>
     </div>
 
-    <!-- Pie de página original -->
+    <!-- Pie de página inferior -->
     <div class="footer-bottom">
       <p>Copyright © {{ year }} Arsite Integradores</p>
-      <a
-        href="https://arsite.com.mx/terminos-y-condiciones/"
-        target="_blank"
-        rel="noopener"
-      >
-        Términos y condiciones
-      </a>
+      <router-link to="/terminos">Términos y condiciones</router-link>
     </div>
   </footer>
 </template>
@@ -34,12 +28,11 @@ const year = new Date().getFullYear();
   box-sizing: border-box;
 }
 
-/* Estilos para la nueva sección CTA */
 .footer-cta {
   background: #78c2e7;
   text-align: center;
   padding: 40px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-cta h2 {
@@ -71,7 +64,6 @@ const year = new Date().getFullYear();
   color: white;
 }
 
-/* Pie de página inferior */
 .footer-bottom {
   padding: 20px;
   display: flex;
