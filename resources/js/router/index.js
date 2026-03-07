@@ -19,7 +19,7 @@ const routes = [
   { path: '/productos', component: Products },
   { path: '/servicios', component: Services },
   { path: '/partners', component: Partners },
-  { path: '/clientes', component: EnConstruccion },   // Mientras tanto, en construcción
+  { path: '/clientes', component: Clients },   // Mientras tanto, en construcción
   { path: '/soporte', component: EnConstruccion },
   { path: '/contacto', component: Contact },
   { path: '/terminos', component: Terminos },
