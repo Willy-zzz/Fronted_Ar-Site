@@ -20,7 +20,7 @@ const routes = [
   { path: '/servicios', component: Services },
   { path: '/partners', component: Partners },
   { path: '/clientes', component: Clients },   // Mientras tanto, en construcción
-  { path: '/soporte', component: EnConstruccion },
+  { path: '/soporte', component: Support },
   { path: '/contacto', component: Contact },
   { path: '/terminos', component: Terminos },
   // Productos 

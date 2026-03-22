@@ -152,7 +152,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: contain; /*cover*/
-  background-color: #000;
+  background-color: #78c2e7;
   transition: opacity 0.5s ease;
   display: block;
 }

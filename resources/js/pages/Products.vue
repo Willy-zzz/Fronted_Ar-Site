@@ -1,33 +1,29 @@
 <template>
   <div class="products-page">
-    <!-- HERO FULL WIDTH -->
     <Hero
       title="Productos"
       subtitle="Equipos y soluciones para redes, seguridad y conectividad"
-      image="/img/mapRedesHero.jpg" 
+      image="/img/mapRedesHero.jpg"
     />
 
-    <!-- CONTENIDO LIMITADO POR EL CONTENEDOR GLOBAL -->
     <section class="products-content container">
-      <h2 class="section-title">Nuestros productos</h2>
-      <p class="section-subtitle">Tecnología de vanguardia para tu negocio</p>
+      <h2 class="section-title">Nuestras categorías</h2>
+      <p class="section-subtitle">Explora nuestras soluciones tecnológicas</p>
 
-      <div class="products-grid">
+      <div class="categories-grid">
         <div
-          v-for="product in products"
-          :key="product.id"
-          class="product-card fade-in"
+          v-for="cat in categories"
+          :key="cat.slug"
+          class="category-card fade-in"
+          @click="goToCategory(cat.slug)"
         >
-          <div class="product-image">
-            <img :src="product.image" :alt="product.name" />
+          <div class="category-image">
+            <img :src="cat.image" :alt="cat.name" />
           </div>
-          <div class="product-info">
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
-            <!-- Botón "Más información" que llevará a la página de detalle -->
-            <router-link :to="`/producto/${product.id}`" class="product-button">
-              Más información <span class="button-arrow">→</span>
-            </router-link>
+          <div class="category-info">
+            <h3>{{ cat.name }}</h3>
+            <p>{{ cat.description }}</p>
+            <span class="category-link">Ver productos →</span>
           </div>
         </div>
       </div>
@@ -36,46 +32,77 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import Hero from '@/components/Hero.vue'
 
-const products = [
+const router = useRouter()
+
+const categories = [
   {
-    id: 1,
+    slug: 'seguridad',
     name: 'Seguridad',
-    description: 'Alto rendimiento para cargas críticas, con redundancia y escalabilidad.',
-    image: '/img/fortigate.jpeg'
+    description: 'Firewalls, UTM, protección perimetral y ciberseguridad empresarial.',
+    image: '/img/categoriasProducto/forticlient.png'
   },
   {
-    id: 2,
-    name: 'Firewall de Nueva Generación',
-    description: 'Protección perimetral avanzada con inspección profunda de paquetes.',
-    image: '/img/product2.jpg'
+    slug: 'movilidad',
+    name: 'Movilidad',
+    description: 'Soluciones WiFi, redes inalámbricas y gestión de dispositivos móviles.',
+    image: '/img/categoriasProducto/movilidad.png'
   },
   {
-    id: 3,
-    name: 'Cámaras IP',
-    description: 'Vigilancia en alta definición con análisis de video inteligente.',
-    image: '/img/product3.jpg'
+    slug: 'switches-routers',
+    name: 'Switches y Routers',
+    description: 'Equipos de capa 2/3, routing avanzado y conmutación de alto rendimiento.',
+    image: '/img/categoriasProducto/switches.png'
   },
   {
-    id: 4,
-    name: 'Switch Gestionable',
-    description: 'Conmutadores de alto desempeño para redes empresariales.',
-    image: '/img/product4.jpg'
+    slug: 'aceleracion-wan',
+    name: 'Aceleración WAN',
+    description: 'Optimización de enlaces, compresión y aceleración de aplicaciones.',
+    image: '/img/categoriasProducto/wan.png'
   },
   {
-    id: 5,
-    name: 'Punto de Acceso Wi-Fi',
-    description: 'Conectividad inalámbrica de alta densidad con gestión centralizada.',
-    image: '/img/product5.jpg'
+    slug: 'almacenamiento',
+    name: 'Almacenamiento y recuperación de datos',
+    description: 'NAS, SAN, backup y soluciones de continuidad de negocio.',
+    image: '/img/categoriasProducto/almacenamiento.png'
   },
   {
-    id: 6,
-    name: 'Dispositivo de Almacenamiento NAS',
-    description: 'Almacenamiento en red seguro y de alta capacidad para backups.',
-    image: '/img/product6.jpg'
+    slug: 'radio-enlaces',
+    name: 'Radio enlaces',
+    description: 'Enlaces punto a punto, punto multipunto y redes inalámbricas de largo alcance.',
+    image: '/img/categoriasProducto/radio.png'
+  },
+  {
+    slug: 'telefonia-ip',
+    name: 'Telefonía IP',
+    description: 'Centrales IP, telefonía unificada y comunicaciones empresariales.',
+    image: '/img/categoriasProducto/telefonia.png'
+  },
+  {
+    slug: 'servidores',
+    name: 'Servidores',
+    description: 'Servidores físicos, blade, rack y soluciones de virtualización.',
+    image: '/img/categoriasProducto/servidores.png'
+  },
+  {
+    slug: 'cableado',
+    name: 'Cable estructurado',
+    description: 'Sistemas de cableado estructurado, fibra óptica, categoría 6/7.',
+    image: '/img/categoriasProducto/cableado.png'
+  },
+  {
+    slug: 'virtualizacion',
+    name: 'Virtualización',
+    description: 'Hypervisores, infraestructura definida por software y nube privada.',
+    image: '/img/categoriasProducto/virtualizacion.png'
   }
 ]
+
+const goToCategory = (slug) => {
+  router.push(`/productos/${slug}`)
+}
 </script>
 
 <style scoped>
@@ -103,49 +130,50 @@ const products = [
   margin-bottom: 3rem;
 }
 
-.products-grid {
+.categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.product-card {
+.category-card {
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #eaeaea;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
-.product-card:hover {
+.category-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(101, 179, 202, 0.15);
   border-color: #65B3CA;
 }
 
-.product-image {
+.category-image {
   width: 100%;
   height: 200px;
   overflow: hidden;
   background: #f5f5f5;
 }
 
-.product-image img {
+.category-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image img {
+.category-card:hover .category-image img {
   transform: scale(1.05);
 }
 
-.product-info {
+.category-info {
   padding: 1.5rem;
   text-align: left;
   display: flex;
@@ -153,54 +181,36 @@ const products = [
   flex: 1;
 }
 
-.product-info h3 {
+.category-info h3 {
   font-size: 1.4rem;
   font-weight: 600;
   color: #1a202c;
   margin-bottom: 0.5rem;
 }
 
-.product-info p {
+.category-info p {
   color: #4a5568;
   line-height: 1.6;
   font-size: 0.95rem;
   margin-bottom: 1rem;
+  flex: 1;
 }
 
-/* Botón de más información */
-.product-button {
+.category-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: auto;
-  padding: 8px 20px;
-  background: #65B3CA;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 0.9rem;
+  gap: 5px;
+  color: #65B3CA;
   font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  align-self: flex-start;
+  font-size: 0.9rem;
+  transition: gap 0.3s;
+  margin-top: auto;
 }
 
-.product-button:hover {
-  background: #3b82f6;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(101, 179, 202, 0.3);
-  border-color: white;
+.category-card:hover .category-link {
+  gap: 10px;
 }
 
-.product-button .button-arrow {
-  transition: transform 0.3s ease;
-}
-
-.product-button:hover .button-arrow {
-  transform: translateX(5px);
-}
-
-/* Animación fade-in */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -214,15 +224,17 @@ const products = [
   }
 }
 
-/* Retrasos escalonados para las tarjetas */
-.product-card:nth-child(1) { animation-delay: 0.1s; }
-.product-card:nth-child(2) { animation-delay: 0.2s; }
-.product-card:nth-child(3) { animation-delay: 0.3s; }
-.product-card:nth-child(4) { animation-delay: 0.4s; }
-.product-card:nth-child(5) { animation-delay: 0.5s; }
-.product-card:nth-child(6) { animation-delay: 0.6s; }
+.category-card:nth-child(1) { animation-delay: 0.05s; }
+.category-card:nth-child(2) { animation-delay: 0.1s; }
+.category-card:nth-child(3) { animation-delay: 0.15s; }
+.category-card:nth-child(4) { animation-delay: 0.2s; }
+.category-card:nth-child(5) { animation-delay: 0.25s; }
+.category-card:nth-child(6) { animation-delay: 0.3s; }
+.category-card:nth-child(7) { animation-delay: 0.35s; }
+.category-card:nth-child(8) { animation-delay: 0.4s; }
+.category-card:nth-child(9) { animation-delay: 0.45s; }
+.category-card:nth-child(10) { animation-delay: 0.5s; }
 
-/* Responsive */
 @media (max-width: 768px) {
   .products-content {
     padding: 60px 0;
@@ -233,18 +245,8 @@ const products = [
   .section-subtitle {
     font-size: 1rem;
   }
-  .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  .product-image {
+  .category-image {
     height: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .products-grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>

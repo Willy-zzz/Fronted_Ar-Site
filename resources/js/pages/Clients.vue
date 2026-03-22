@@ -7,7 +7,7 @@
     <section class="clients-content container">
       <h2 class="section-title">Nuestros clientes</h2>
       <p class="section-subtitle">
-        A lo largo de los años hemos colaborado con más de 100 empresas de diversos sectores.
+        A lo largo de los años hemos colaborado con empresas de diversos sectores.
         Aquí algunos de ellos:
       </p>
 
@@ -28,21 +28,21 @@
 import Hero from '@/components/Hero.vue'
 
 const clients = [
-  { id: 1, name: 'AutoSur', logo: '/img/clientes/autosur.jpg', industry: 'Alimentación' },
-  { id: 2, name: 'Cemex', logo: '/img/clientes/cemex.png', industry: 'Construcción' },
-  { id: 3, name: 'FEMSA', logo: '/img/clientes/femsa.png', industry: 'Bebidas / Comercio' },
-  { id: 4, name: 'América Móvil', logo: '/img/clientes/america-movil.png', industry: 'Telecomunicaciones' },
-  { id: 5, name: 'Grupo Modelo', logo: '/img/clientes/modelo.png', industry: 'Cervecera' },
-  { id: 6, name: 'Banorte', logo: '/img/clientes/banorte.png', industry: 'Financiero' },
-  { id: 7, name: 'Walmart México', logo: '/img/clientes/walmart.png', industry: 'Comercio minorista' },
-  { id: 8, name: 'Soriana', logo: '/img/clientes/soriana.png', industry: 'Comercio minorista' },
-  { id: 9, name: 'Liverpool', logo: '/img/clientes/liverpool.png', industry: 'Tiendas departamentales' },
-  { id: 10, name: 'Coppel', logo: '/img/clientes/coppel.png', industry: 'Comercio / Servicios financieros' },
-  { id: 11, name: 'Grupo Salinas', logo: '/img/clientes/salinas.png', industry: 'Grupo empresarial' },
-  { id: 12, name: 'Kellogg’s', logo: '/img/clientes/kelloggs.png', industry: 'Alimentación' },
-  { id: 13, name: 'Nestlé', logo: '/img/clientes/nestle.png', industry: 'Alimentación' },
-  { id: 14, name: 'Pemex', logo: '/img/clientes/pemex.png', industry: 'Energía' },
-  { id: 15, name: 'CFE', logo: '/img/clientes/cfe.png', industry: 'Electricidad' },
+  { id: 1, name: 'AutoSur', logo: '/img/clientes/autosur.jpg', industry: 'Automotriz' },
+  { id: 2, name: 'Gamesa', logo: '/img/clientes/gamesa.png', industry: 'Alimentos' },
+  { id: 3, name: 'Genomma Lab', logo: '/img/clientes/genomalab.jpg', industry: 'Farmacéutica / Consumo' },
+  { id: 4, name: 'ITVH', logo: '/img/clientes/itvh.png', industry: 'Educación' },
+  { id: 5, name: 'ISSET', logo: '/img/clientes/isset.png', industry: 'Salud / Gobierno' },
+  { id: 6, name: 'Grupo Modelo', logo: '/img/clientes/grupomodelo.png', industry: 'Bebidas (Cervecera)' },
+  { id: 7, name: 'Net Brains', logo: '/img/clientes/netbrains.png', industry: 'Tecnología / TI' },
+  { id: 8, name: 'Pemex', logo: '/img/clientes/pemex.png', industry: 'Energía / Petróleo' },
+  { id: 9, name: 'SAGARPA', logo: '/img/clientes/sagarpa.png', industry: 'Gobierno / Agricultura' },
+  { id: 10, name: 'Secretaria de Salud', logo: '/img/clientes/ss.jpg', industry: 'Salud / Gobierno' },
+  { id: 11, name: 'Secretaria de Seguridad Publica', logo: '/img/clientes/ssp.png', industry: 'Seguridad / Gobierno' },
+  { id: 12, name: 'UNAM', logo: '/img/clientes/unam.png', industry: 'Educación' },
+  { id: 13, name: 'Universidad Veracruzana', logo: '/img/clientes/uv.png', industry: 'Educación' },
+  { id: 14, name: 'Corsa', logo: '/img/clientes/corsa.png', industry: 'Construcción' },
+  { id: 15, name: 'FOVISSSTE', logo: '/img/clientes/fovissste.png', industry: 'Vivienda / Gobierno' },
 
 ]
 </script>
