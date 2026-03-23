@@ -60,7 +60,7 @@ const categories = [
     slug: 'aceleracion-wan',
     name: 'Aceleración WAN',
     description: 'Optimización de enlaces, compresión y aceleración de aplicaciones.',
-    image: '/img/categoriasProducto/wan.png'
+    image: '/img/categoriasProducto/wan.avif'
   },
   {
     slug: 'almacenamiento',
@@ -165,7 +165,7 @@ const goToCategory = (slug) => {
 .category-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 

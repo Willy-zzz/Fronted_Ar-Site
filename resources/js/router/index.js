@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import About from '../pages/About.vue'
 import Products from '../pages/Products.vue'
+import CategoriaProductos from '../pages/categoriaProductos.vue'
 import Services from '../pages/Services.vue'
 import Partners from '../pages/Partners.vue'
 import Clients from '../pages/Clients.vue'
@@ -17,6 +18,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/nosotros', component: About },
   { path: '/productos', component: Products },
+  { path: '/productos/:categoria', component: CategoriaProductos },
   { path: '/servicios', component: Services },
   { path: '/partners', component: Partners },
   { path: '/clientes', component: Clients },   // Mientras tanto, en construcción
