@@ -1,0 +1,18 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app-XE2hLE8g.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-Mg3_HTnK.css"
+    ],
+    "assets": [
+      "assets/LOGOARSITE-Dqt08dwR.png"
+    ]
+  },
+  "resources/js/assets/LOGOARSITE.png": {
+    "file": "assets/LOGOARSITE-Dqt08dwR.png",
+    "src": "resources/js/assets/LOGOARSITE.png"
+  }
+}
