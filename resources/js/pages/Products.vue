@@ -66,13 +66,13 @@ const categories = [
     slug: 'almacenamiento',
     name: 'Almacenamiento y recuperación de datos',
     description: 'NAS, SAN, backup y soluciones de continuidad de negocio.',
-    image: '/img/categoriasProducto/almacenamiento.png'
+    image: '/img/categoriasProducto/almacenamiento.avif'
   },
   {
     slug: 'radio-enlaces',
     name: 'Radio enlaces',
     description: 'Enlaces punto a punto, punto multipunto y redes inalámbricas de largo alcance.',
-    image: '/img/categoriasProducto/radio.png'
+    image: '/img/categoriasProducto/radio.webp'
   },
   {
     slug: 'telefonia-ip',
@@ -96,7 +96,7 @@ const categories = [
     slug: 'virtualizacion',
     name: 'Virtualización',
     description: 'Hypervisores, infraestructura definida por software y nube privada.',
-    image: '/img/categoriasProducto/virtualizacion.png'
+    image: '/img/categoriasProducto/virtualizacion.svg'
   }
 ]
 

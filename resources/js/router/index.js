@@ -11,7 +11,6 @@ import Support from '../pages/Support.vue'
 import Contact from '../pages/Contact.vue'
 import EnConstruccion from '../pages/EnConstruccion.vue'
 import NotFound from '../pages/NotFound.vue'
-import ProductoDetalle from '../pages/ProductoDetalle.vue'
 import Terminos from '../pages/Terminos.vue'
 
 const routes = [
@@ -25,8 +24,6 @@ const routes = [
   { path: '/soporte', component: Support },
   { path: '/contacto', component: Contact },
   { path: '/terminos', component: Terminos },
-  // Productos 
-  { path: '/producto/:id', component: ProductoDetalle },
 
   // 404
   { path: '/:pathMatch(.*)*', component: NotFound },

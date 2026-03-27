@@ -24,17 +24,18 @@ const backgroundStyle = computed(() => ({
 <style scoped>
 .hero {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   background-size: cover;
   background-position: center;
   position: relative;
+  background-color: #D3E9EF;
 }
 
 .overlay {
   position: absolute;
   bottom: 40px;
   left: 60px;
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   max-width: 80%;
 }

@@ -53,27 +53,37 @@ import { ref, onMounted, onUnmounted } from 'vue'
 // Array con toda la información de cada slide
 const slides = ref([
   {
-    image: '/img/slide1.png',
-    title: 'Descubre Nuestros <span class="highlight">Productos</span>',
-    description: 'Explora nuestra colección exclusiva con las mejores ofertas del mercado. Calidad garantizada y envío rápido.',
+    image: '/img/carrusel/premio.jpg',
+    title: 'Premio de <span class="highlight">Lealtad</span> y <span class="highlight">Trayectoria</span> por 20 años',
+    description: '"Gracias a Fortinet por honrarnos con el Reconocimiento por 20 años de Lealtad y Trayectoria. ¡Un futuro más seguro nos aguarda juntos!" #Fortinet20Años',
     link: {
-      text: 'Ver Catálogo',
-      url: '/catalogo',
-      external: false
+      text: 'Ver Más',
+      url: 'https://www.facebook.com/ArSiteIntegradores/posts/pfbid04m6BYMxdT1y1ecacTKjbjV1qGwmJbSNGptSZezayFRWtNbceLGNC1hpQXjohDxaZl',
+      external: true
     }
   },
   {
-    image: '/img/slide2.webp',
-    title: 'Ofertas <span class="highlight">Especiales</span>',
-    description: 'Hasta 50% de descuento en productos seleccionados. Oferta válida por tiempo limitado.',
+    image: '/img/carrusel/wifi.webp',
+    title: '¿Que es <span class="highlight">802.11ax (WI-FI 6)?</span> Y porque los necesitas',
+    description: 'Su objetivo principal es mejorar cómo los access points gestionan varios dispositivos al mismo tiempo, priorizando el rendimiento estable para todos los clientes en lugar de solo la velocidad Wi-Fi.',
     link: {
-      text: 'Ver Ofertas',
-      url: '/ofertas',
-      external: false
+      text: 'Leer Más',
+      url: 'https://www.hpe.com/es/es/what-is/wi-fi-6.html',
+      external: true
     }
   },
   {
-    image: '/img/slide3.webp',
+    image: '/img/carrusel/via.png',
+    title: 'Conectividad <span class="highlight">sin VPN</span> con Aruba Virtual Intranet Access (VIA)',
+    description: 'Aruba permite acceso seguro sin VPN tradicional, usando control por identidad y políticas con soluciones como Aruba ClearPass y Aruba EdgeConnect, simplificando la conexión y mejorando la seguridad.',
+    link: {
+      text: 'Leer Más',
+      url: 'https://www.hpe.com/psnow/doc/a00135887enw',
+      external: true
+    }
+  },
+  {
+    image: '/img/carrusel/slide4.webp',
     title: 'Nueva <span class="highlight">Colección</span> 2024',
     description: 'Llega la temporada con nuestros productos más innovadores. Diseño moderno y funcional.',
     link: {
@@ -113,7 +123,7 @@ const goToSlide = (index) => {
 let intervalId = null
 
 onMounted(() => {
-  intervalId = setInterval(next, 5000)
+  intervalId = setInterval(next, 8000)
 })
 
 onUnmounted(() => {
