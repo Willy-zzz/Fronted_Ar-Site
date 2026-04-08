@@ -6,7 +6,7 @@ import Home from '../pages/Home.vue'
 import About from '../pages/About.vue'
 
 import Products from '../pages/Products.vue'
-import CategoriaProductos from '../pages/categoriaProductos.vue'
+import CategoriaProductos from '../pages/CategoriaProductos.vue'
 
 import Services from '../pages/Services.vue'
 import Partners from '../pages/Partners.vue'
@@ -16,6 +16,7 @@ import LoginPage from '../pages/soporte/LoginPage.vue'
 import HelpDeskPage from '../pages/soporte/HelpDeskPage.vue'
 import RecuperarPage from '../pages/soporte/RecuperarPage.vue'
 import RegistroPage from '../pages/soporte/RegistroPage.vue'
+import CuentaPage from '../pages/soporte/CuentaPage.vue'
 
 import Contact from '../pages/Contact.vue'
 import NotFound from '../pages/NotFound.vue'
@@ -40,6 +41,7 @@ const routes = [
   { path: '/soporte/helpdesk', name: 'soporte.helpdesk', component: HelpDeskPage, meta: { requiresAuth: true } },
   { path: '/soporte/recuperar', component: RecuperarPage, meta: { guest: true } },
   { path: '/soporte/registro', component: RegistroPage, meta: { guest: true } },
+  { path: '/soporte/cuenta', component: CuentaPage, meta: { requiresAuth: true } },
   // Opcional: redirigir /soporte a login o helpdesk según autenticación
   {
     path: '/soporte',
