@@ -3,8 +3,9 @@
     <Hero
       title="Productos"
       subtitle="Equipos y soluciones para redes, seguridad y conectividad"
-      image="/img/mapRedesHero.jpg"
+      
     />
+    <!-- image="/img/mapRedesHero.jpg"  por si quieren agregar otra ruta  -->
 
     <section class="products-content container">
       <h2 class="section-title">Nuestras categorías</h2>

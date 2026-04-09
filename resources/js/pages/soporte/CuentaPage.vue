@@ -1,6 +1,6 @@
 <template>
     <div class="cuenta-page">
-        <Hero title="Cuenta" subtitle="Gestiona tu información personal" image="/img/MapRedesHero.jpg" />
+        <Hero title="Cuenta" subtitle="Gestiona tu información personal"  />
 
         <section class="cuenta-content container">
             <div class="cuenta-layout">

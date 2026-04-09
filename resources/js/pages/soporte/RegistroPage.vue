@@ -1,8 +1,7 @@
 <template>
     <div class="support-page">
         <!-- HERO FULL WIDTH -->
-        <Hero title="Soporte" subtitle="Crea tu cuenta para gestionar tickets y solicitudes"
-            image="/img/MapRedesHero.jpg" />
+        <Hero title="Soporte" subtitle="Crea tu cuenta para gestionar tickets y solicitudes" />
 
         <!-- CONTENIDO -->
         <section class="support-content container">

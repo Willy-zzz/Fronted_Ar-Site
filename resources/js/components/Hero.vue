@@ -13,7 +13,10 @@ import { computed } from 'vue'
 const props = defineProps({
   title: String,
   subtitle: String,
-  image: String
+  image: {
+    type: String,
+    default: '/img/hero.jpg'
+  }
 })
 
 const backgroundStyle = computed(() => ({

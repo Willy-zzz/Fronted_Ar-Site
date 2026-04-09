@@ -1,7 +1,6 @@
 <template>
   <!-- HERO FULL WIDTH -->
-  <Hero title="Nosotros" subtitle="Integración de Tecnologías de Información y Telecomunicaciones"
-    image="/img/mapRedesHero.jpg" />
+  <Hero title="Nosotros" subtitle="Integración de Tecnologías de Información y Telecomunicaciones"/>
 
   <section class="about container">
 

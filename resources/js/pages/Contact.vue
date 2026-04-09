@@ -4,8 +4,8 @@
     <Hero
       title="Contáctanos"
       subtitle="Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo"
-      image="/img/mapRedesHero.jpg"
-    />
+      />
+      <!-- image="/img/mapRedesHero.jpg" -->
 
     <!-- MAIN CONTACT SECTION (CONTENIDO LIMITADO) -->
     <section class="contact-main container">

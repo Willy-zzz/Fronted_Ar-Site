@@ -1,7 +1,6 @@
 <template>
     <div class="helpdesk-page">
-        <Hero title="Panel de Soporte" subtitle="Gestiona tus tickets y solicitudes"
-            image="/img/MapRedesHero.jpg" />
+        <Hero title="Panel de Soporte" subtitle="Gestiona tus tickets y solicitudes" />
 
         <section class="helpdesk-section container">
             <div class="helpdesk">

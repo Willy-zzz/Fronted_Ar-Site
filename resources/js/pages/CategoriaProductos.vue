@@ -1,7 +1,7 @@
 <template>
     <div class="categoria-page">
-        <Hero :title="categoria?.name || 'Categoría'" :subtitle="categoria?.description || 'Productos destacados'"
-            :image="categoria?.image || '/img/default-categoria.jpg'" />
+        <Hero :title="categoria?.name || 'Categoría'" :subtitle="categoria?.description || 'Productos destacados'"/>
+        <!-- :image="categoria?.image || '/img/categoriaProducto/default.jpg'"  -->
 
         <section class="categoria-content container">
             <h2 class="section-title">{{ categoria?.name }}</h2>

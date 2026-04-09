@@ -4,7 +4,7 @@
         <Hero class = "terminos-hero"
             title="Términos y Condiciones" 
             subtitle="Política de privacidad de AR-SITE INTEGRADORES"
-            image="/img/hero-terminos.jpg" 
+            image="/img/tyc.png" 
         />
 
         <!-- CONTENIDO LIMITADO POR EL CONTENEDOR GLOBAL -->
@@ -126,16 +126,17 @@ import Hero from '@/components/Hero.vue'
 
 }
 
-:deep(.terminos-hero) {
+/* :deep(.terminos-hero) {
     background: rgba(57, 57, 57, 0.55);
     backdrop-filter: blur(8px);
 
-    /* Sombra para dar profundidad */
+    Sombra para dar profundidad 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-    /* Borde sutil */
+    Borde sutil 
     border: 1px solid rgba(255, 255, 255, 0.2);
-}
+    
+} */
 
 :deep(.terminos-hero .overlay h1){
     font-size: 4rem;

@@ -1,7 +1,6 @@
 <template>
     <div class="support-page">
-        <Hero title="Soporte" subtitle="Recupera el acceso a tu cuenta"
-            image="/img/MapRedesHero.jpg" />
+        <Hero title="Soporte" subtitle="Recupera el acceso a tu cuenta" />
 
         <section class="support-content container">
             <div class="login-card">

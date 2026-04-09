@@ -1,7 +1,6 @@
 <template>
     <div class="login-page">
-        <Hero title="Soporte" subtitle="Accede a tu cuenta para gestionar tickets y solicitudes"
-            image="/img/MapRedesHero.jpg" />
+        <Hero title="Soporte" subtitle="Accede a tu cuenta para gestionar tickets y solicitudes"  />
 
         <section class="login-section container">
             <div class="login-card">

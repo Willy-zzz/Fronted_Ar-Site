@@ -1,7 +1,7 @@
 <template>
   <div class="clients-page">
     <!-- HERO FULL WIDTH -->
-    <Hero title="Clientes" subtitle="Empresas que confían en nosotros" image="/img/mapRedesHero.jpg" />
+    <Hero title="Clientes" subtitle="Empresas que confían en nosotros" />
 
     <!-- CONTENIDO LIMITADO POR EL CONTENEDOR GLOBAL -->
     <section class="clients-content container">

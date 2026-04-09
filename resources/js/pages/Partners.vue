@@ -1,7 +1,7 @@
 <template>
   <div class="partners-page">
     <!-- HERO FULL WIDTH -->
-    <Hero title="Partners" subtitle="Nuestros aliados estratégicos" image="/img/mapRedesHero.jpg" />
+    <Hero title="Partners" subtitle="Nuestros aliados estratégicos" />
 
     <!-- CONTENIDO LIMITADO POR EL CONTENEDOR GLOBAL -->
     <section class="partners-content container">

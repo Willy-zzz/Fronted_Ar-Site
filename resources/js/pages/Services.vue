@@ -2,8 +2,7 @@
   <div class="services-page">
     <!-- HERO FULL WIDTH -->
     <Hero title="Servicios" 
-      subtitle="Soluciones integrales en tecnología, seguridad y conectividad"
-      image="/img/mapRedesHero.jpg"  />
+      subtitle="Soluciones integrales en tecnología, seguridad y conectividad"/>
 
     <section class="services-content container">
       <h2 class="section-title">Nuestros Servicios</h2>
